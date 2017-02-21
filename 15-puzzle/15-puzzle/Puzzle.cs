@@ -8,8 +8,9 @@ namespace _15_puzzle
 {
     class Puzzle
     {
-        public readonly List<List<long>> frame;
-        long sizeOfFrame;
+        public readonly List<List<long>> Frame;
+        public readonly long SizeOfFrame;
+        private Dictionary<long, Position> positions;
         public Puzzle(params long[] numberedSquare)
         {
             try
@@ -21,14 +22,17 @@ namespace _15_puzzle
                 }
                 else
                 {
-                    sizeOfFrame = Convert.ToInt64(Math.Sqrt(numberedSquare.Count()));
-                    frame = new List<List<long>>();
-                    for (int i = 0; i < sizeOfFrame; i++)
+                    positions = new Dictionary<long,Position>();
+                    SizeOfFrame = Convert.ToInt64(Math.Sqrt(numberedSquare.Count()));
+                    Frame = new List<List<long>>();
+                    for (int i = 0; i < SizeOfFrame; i++)
                     {
-                        frame.Add(new List<long>());
-                        for (int j = 0; j < sizeOfFrame; j++)
+                        Frame.Add(new List<long>());
+                        for (int j = 0; j < SizeOfFrame; j++)
                         {
-                            frame[i].Add(numberedSquare[i * sizeOfFrame + j]);
+                            int value = Convert.ToInt32(numberedSquare[i * SizeOfFrame + j]);
+                            Frame[i].Add(value);
+                            positions.Add(value, new Position(i, j));
                         }
                     }
                 }
@@ -44,8 +48,12 @@ namespace _15_puzzle
         {
             get
             {
-                return frame[x][y];
+                return Frame[x][y];
             }
+        }
+        public Position GetLocation(int value)
+        {       
+           return positions[value];   
         }
     }
 }

@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace _15_puzzle
 {
-    class Program
+    class Position
     {
-        static void Main(string[] args)
+        public readonly long X;
+        public readonly long Y;
+        public Position(long x, long y)
         {
-            var p = new Puzzle(1, 2, 3, 4, 5, 6, 7, 8, 0);
-            Console.WriteLine(p[1, 1]);
+            this.X = x;
+            this.Y = y;
         }
     }
 }
