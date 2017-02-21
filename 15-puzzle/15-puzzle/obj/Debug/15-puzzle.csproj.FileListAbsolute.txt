@@ -1,0 +1,6 @@
+c:\users\ск\documents\visual studio 2015\Projects\15-puzzle\15-puzzle\bin\Debug\15-puzzle.exe.config
+c:\users\ск\documents\visual studio 2015\Projects\15-puzzle\15-puzzle\bin\Debug\15-puzzle.exe
+c:\users\ск\documents\visual studio 2015\Projects\15-puzzle\15-puzzle\bin\Debug\15-puzzle.pdb
+c:\users\ск\documents\visual studio 2015\Projects\15-puzzle\15-puzzle\obj\Debug\15-puzzle.csprojResolveAssemblyReference.cache
+c:\users\ск\documents\visual studio 2015\Projects\15-puzzle\15-puzzle\obj\Debug\15-puzzle.exe
+c:\users\ск\documents\visual studio 2015\Projects\15-puzzle\15-puzzle\obj\Debug\15-puzzle.pdb
