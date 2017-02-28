@@ -44,22 +44,16 @@ namespace _15_puzzle
         }
         public void Shift(int value)
         {
-            try
+           
+            if (positions[value] - positions[0] == 1)
             {
-                if (positions[value] - positions[0] == 1)
-                {
-                    Position positionZero = positions[0];
-                    this[positions[0].X , positions[0].Y] = value;
-                    this[positions[value].X , positions[value].Y] = 0;
-                    positions[0] = positions[value];
-                    positions[value] = positionZero;
-                }
-                else throw new ArgumentException("Невозможно передвинуть фишку");
+                Position positionZero = positions[0];
+                this[positions[0].X , positions[0].Y] = value;
+                this[positions[value].X , positions[value].Y] = 0;
+                positions[0] = positions[value];
+                positions[value] = positionZero;
             }
-            catch (ArgumentException e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            else throw new ArgumentException("Невозможно передвинуть фишку");
         }
         public static Puzzle FromCSV(string file)
         {
@@ -72,8 +66,9 @@ namespace _15_puzzle
                     convertedData.Add(Convert.ToInt32(data[i].Split(';')[j]));
                 }
             }
-            Puzzle game = new Puzzle(convertedData.ToArray<int>());
-            return game;
+            Line.Check(convertedData.ToArray<int>());
+            return new Puzzle(convertedData.ToArray<int>());
+            
         }
     }
 }
